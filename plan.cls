@@ -14,7 +14,7 @@
 
 \newbool{codirector}
 
-\ProvidesClass{charter}
+\ProvidesClass{plan}
 %\DeclareOption{codirector}{\booltrue{codirector}}
 \DeclareOption*{\PassOptionsToPackage{\CurrentOption}{color}}%
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}%
