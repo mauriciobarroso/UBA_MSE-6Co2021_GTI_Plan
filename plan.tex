@@ -7,7 +7,7 @@
 
 
 % El títulos de la memoria, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \ttitle
-\titulo{Cámara de seguridad IoT con conectividad LoRaWAN}
+\titulo{Cámara IoT para Detección Facial con conectividad Wi-Fi}
 
 % Nombre del posgrado, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \degreename
 %\posgrado{Carrera de Especialización en Sistemas Embebidos}
@@ -39,7 +39,7 @@
 \pertenenciaJurTres{pertenencia (3)}
 \fechaINICIO{23 de junio de 2021}		%Fecha de inicio de la cursada de GdP \fechaInicioName
 \fechaFINALPlan{11 de agosto de 2021} 	%Fecha de final de cursada de GdP
-\fechaFINALTrabajo{15 de mayo de 2022}	%Fecha de defensa pública del trabajo final
+\fechaFINALTrabajo{15 de diciembre de 2022}	%Fecha de defensa pública del trabajo final
 
 
 \begin{document}
@@ -68,23 +68,7 @@
 \rowcolor[HTML]{C0C0C0}
 Revisión & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Detalles de los cambios realizados} & Fecha      \\ \hline
 0      & Creación del documento                                 &\fechaInicioName \\ \hline
-1      & Se completa hasta el punto 5 inclusive                 & 13 de julio de 2021 \\
 \hline
-2      & Se completa hasta el punto 9 inclusive                 & 27 de julio de 2021 \\
-\hline
-3      & Se completa hasta el punto 11 inclusive                 & 4 de Agosto de 2021 \\
-\hline
-4      & Se completa hasta el punto 15 inclusive. Se deja pendiente el punto 14                 & 4 de Agosto de 2021 \\
-\hline
-5      & Se completa el punto 14                 & 10 de Agosto de 2021 \\
-\hline
-% 2      & Se completa hasta el punto 9 inclusive                 & 27 de julio de 2021 \\ \hline
-%2      & Se completa hasta el punto 7 inclusive
-%		  Se puede agregar algo más \newline
-%		  En distintas líneas \newline
-%		  Así                                                    & dd/mm/aaaa \\ \hline
-%3      & Se completa hasta el punto 11 inclusive                & dd/mm/aaaa \\ \hline
-%4      & Se completa el plan	                                 & dd/mm/aaaa \\ \hline
 \end{tabularx}
 \end{table}
 
@@ -101,7 +85,7 @@ Buenos Aires, \fechaInicioName
 
 \vspace{2cm}
 
-Por medio de la presente se acuerda con el \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'', consistirá esencialmente en la implementación de un prototipo de una cámara de seguridad para entornos IoT con conectividad LoRaWAN, y tendrá un presupuesto preliminar estimado de 600 hs de trabajo y US\$200, con fecha de inicio \fechaInicioName\hspace{1px} y fecha de presentación pública \fechaFinalName.
+Por medio de la presente se acuerda con el \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'', consistirá esencialmente en la implementación del prototipo de una cámara para detectar rostros en entornos IoT con conectividad Wi-Fi, y tendrá un presupuesto preliminar estimado de 600 hs de trabajo y US\$200, con fecha de inicio \fechaInicioName\hspace{1px} y fecha de presentación pública \fechaFinalName.
 
 Se adjunta a esta acta la planificación inicial.
 
@@ -124,28 +108,15 @@ Se adjunta a esta acta la planificación inicial.
 \section{1. Descripción técnica-conceptual del proyecto a realizar}
 \label{sec:descripcion}
 
-La seguridad de espacios y bienes es un aspecto muy importante en la vida de las personas. Es así que en el mercado existen distintos tipos de soluciones basadas en dispositivos electrónicos, que permiten controlar y monitorear los espacios geográficos en donde se encuentran instalados. Estos dispositivos en conjunto forman sistemas de seguridad, que pueden detectar mediante distintos tipos de datos eventos no deseados.
+La difusión de las redes sociales y el auge del Internet de las Cosas (IoT, Internet of Things) han aumentado significativamente la cantidad de datos disponibles en todos los aspectos de la vida humana y nos han llevado a la era de Big Data. Este gran volumen de datos tiene el potencial de mejorar nuestra comprensión del estado del mundo y permitir predicciones más precisas de un estado futuro. Los sistemas biométricos, donde la detección de rostros representa un papel auxiliar fundamental para mejorar el reconocimiento de rostros, ya que los rasgos faciales capturan una gran parte de la individualidad de una persona. De hecho, la detección de rostros ha sido un área de investigación activa en el campo de la visión artificial durante más de tres décadas, principalmente debido a la innumerable cantidad de aplicaciones que requieren la detección de rostros como primer paso.
 
-Los dispositivos electrónicos de seguridad más utilizados son las cámaras. Estas permiten obtener imágenes en forma de videos o fotografías del sector en particular donde se encuentran. Los primeros sistemas de seguridad basados en cámaras necesitaban de un dispositivo para almacenar las imágenes que obtenían. Hoy en día las cámaras de seguridad poseen distintos tipos de conectividad hacia Internet, lo que les permite transmitir las imágenes que obtienen hacia servidores en la nube para que sean procesadas y almacenadas.
+Hoy en día, los dispositivos móviles, como teléfonos inteligentes y tabletas, brindan a los usuarios varias aplicaciones relacionadas con la tarea de detección de rostros, como grabación de video inteligente, navegación, aplicaciones para mejorar la seguridad, anotación automática de contenido visual, computación afectiva, incluido el reconocimiento y seguimiento de rostros.
 
-La transferencia de datos desde una cámara de seguridad hacia Internet requiere de un gran ancho de banda, por lo que es muy común que estos dispositivos posean conectividad Wi-Fi (inalámbrico) y/o Ethernet (cableado). La utilización de estas conexiones implica la existencia previa de, generalmente, una red de tipo LAN (Local Area Network) que consta principalmente de un router que se encarga de proporcionar direcciones IP (Internet Protocol) a todos los dispositivos de la red. Este escenario es muy común en entornos urbanos, donde, los proveedores de Internet proporcionan a sus usuarios conexiones estables y de gran ancho de banda, a través de redes de fibra óptica y/o cable coaxial.
+Sin embargo, la disponibilidad limitada de unidades de procesamiento gŕafico (GPU, Graphics Processing Unit) en dichos dispositivos impone una limitación en el rendimiento de los algoritmos que se pueden usar de manera eficiente para la tarea de detección de rostros. Las GPUs integradas en estos dispostivos móviles son más lentas que las utlizadas en computadores de escritorio, con solo una fracción de memoria y esta restricción hace que la mayoría de los algoritmos de aprendizaje profundo (DL, Deep Learning) recomendados sean inadecuados para tales aplicaciones de detección y reconocimiento de rostros.
 
-Por otro lado, las zonas rurales no cuentan con la cobertura de los proveedores de Internet de las zonas urbanas, ya que a estos no les resulta rentable, y en muchos casos posible, instalar toda la infraestructura necesaria para proporcionar sus servicios. Para estos casos existen cámaras de seguridad con conectividad móvil (redes de telefonía) para transferir datos hacia Internet. Aunque esto supone un costo económico adicional que varía en función de la cantidad de datos transferidos, es una de las pocas soluciones viables que existen actualmente en el mercado. Es común también que este tipo de cámaras dispongan de una fuente de alimentación basada en baterías o paneles solares.
+Entonces, el objetivo de este trabajo es diseñar e implementar una solución de bajo costo económico y bajo consumo eléctrico, que pueda detectar y contar rostros humanos a través de una cámara y con ayuda de algoritmos de DL, como paso previo para la tarea de reconocimiento de rostros.
 
-Entonces, el objetivo de este trabajo es diseñar e implementar una cámara de seguridad que pueda utilizarse en lugares donde no existen redes de banda ancha y tampoco una fuente de alimentación constante, y de esta manera lograr un dispositivo con la capacidad solucionar la problemática planteada previamente.
-
-El desarrollo de este proyecto está basado principalmente en el área de sistemas embebidos, pero también incorpora elementos propios de IoT (Internet of Things) y ML (Machine Learning) para lograr prestaciones adecuadas al contexto actual. El Internet de las cosas o IoT, por sus siglas en inglés, se refiere a la conexión de dispositivos y objetos a Internet con el objetivo de monitorearlos e interactuar con ellos de manera remota. IoT plantea algunas problemáticas como la seguridad de la información, la alimentación de dispositivos que no disponen de una fuente de energía eléctrica constante y la administración del ancho de banda disponible. El aprendizaje automático o ML, por sus siglas en inglés, permite a los sistemas computacionales realizar predicciones y tomar decisiones en función de los datos de entrada. En los últimos años la optimización que han tenido los algoritmos de ML permiten que estos puedan ser ejecutados en sistemas embebidos, lo que da como resultado una amplia gama de nuevas aplicaciones y otra perspectiva para resolver problemas antes planteados.
-
-Dentro de un entorno IoT elegir el tipo de red para la interconexión de nodos finales con Internet es un aspecto muy importante. Es así que, en aplicaciones donde el consumo energético y el aprovechamiento de ancho de banda son importantes, LoRaWAN es el tipo de red óptimo para estos casos. Esta red permite la conexión de nodos finales hacia gateways conectados a Internet hasta una distancia teórica de 20 Km y con un ancho de banda de hasta 500 KHz (US915). La topología de red a utilizar en este proyecto sería la que se observa en la figura \ref{fig:topology}.
-
-\begin{figure}[htpb]
-\centering
-\includegraphics[width=0.8\textwidth]{./fig/topology.png}
-\caption{Diagrama en bloques del sistema}
-\label{fig:topology}
-\end{figure}
-
-\vspace{25px}
+El desarrollo de este proyecto está basado principalmente en el área de sistemas embebidos, pero también incorpora elementos propios de IoT y DL para lograr prestaciones adecuadas al contexto actual. El IoT, por sus siglas en inglés, se refiere a la conexión de dispositivos a Internet con el objetivo de monitorearlos e interactuar con ellos de manera remota. IoT plantea algunas problemáticas como la seguridad de la información, la alimentación de dispositivos que no disponen de una fuente de energía eléctrica constante y la administración del ancho de banda disponible. El aprendizaje automático (ML, Machine Learning) permite a los sistemas computacionales realizar predicciones y tomar decisiones en función de los datos de entrada. DL es un conjunto de algoritmos de ML que entrena a un sistema computacional para que realice tareas complejas a través de redes neuronales convolucionales (CNN, Convolutional Neural Networks) que simulan el funcionamiento de las neuronas en los humanos. En los últimos años la optimización que han tenido los algoritmos de ML y DL permiten que estos puedan ser ejecutados en sistemas embebidos, lo que da como resultado una amplia gama de nuevas aplicaciones y otra perspectiva para resolver problemas planteados en el pasado.
 
 Según todas las características antes descritas, el sistema embebido implicado en este trabajo deberá tener el diagrama de bloques que se expone en la figura \ref{fig:blocks}.
 
@@ -158,7 +129,7 @@ Según todas las características antes descritas, el sistema embebido implicado
 
 \vspace{25px}
 
-El sistema embebido tiene como componente más importante un microcontrolador que se encarga principalmente de ejecutar un modelo de machine learning para la detección de personas, sus entradas son los valores leídos por la cámara y el sensor de movimiento PIR (Passive InfraRed). Otra función del microcontrolador es la ejecución del stack LoRaWAN, para que en conjunto con el transceptor LoRa, el sistema pueda interactuar correctamente dentro de una red de este tipo. Finalmente, se cuenta con una tarjeta SD (Secure Digital) para almacenar las imágenes capturadas por la cámara.
+El sistema propuesto tiene como componente más importante una tarjeta de desarrollo ESP32-S3-DevKitC-1, cuyo elemento principal es un SoC (System on a Chip) ESP32-S3, que se encagará de ejecutar los modelos de DL, adquirir y procesar las imágenes obtenidas por la cámara, adquirir señales del sensor PIR (Passive InfraRed) y establecer comunicación con los servidores de AWS (Amazon Web Services) para enviar y recibir información. El sensor PIR ayuda a establer si cerca del sistema existe algún tipo de movimiento para ejecutar las tareas previstas con el menor uso de energía posible. La cámara tiene la función de obtener imágenes y digitalizarlas para ofrecerlas al SoC.
 
 \section{2. Identificación y análisis de los interesados}
 \label{sec:interesados}
@@ -186,9 +157,9 @@ Usuario final & -                 & -             			& -       	\\ \hline
 \section{3. Propósito del proyecto}
 \label{sec:proposito}
 
-El propósito de este proyecto es diseñar e implementar un sistema embebido que funcione como cámara de seguridad en un entorno IoT con ayuda de algoritmos de ML.
+El propósito de este proyecto es diseñar e implementar un sistema embebido que mediante una cámara pueda detectar rostros humanos de las imágenes que obtiene con ayuda de uno o varios modelos de DL, para transmitir los resultados de sus predicciones a un servidor IoT.
 
-Un propósito personal del autor es obtener conocimientos y experiencia sobre implementación de algoritmos de ML en sistemas embebidos.
+Un propósito personal del autor es obtener conocimientos y experiencia sobre diseño e implementación de modelo de DL optmizados para sistemas embebidos.
 
 \section{4. Alcance del proyecto}
 \label{sec:alcance}
@@ -196,15 +167,15 @@ Un propósito personal del autor es obtener conocimientos y experiencia sobre im
 Este proyecto incluye:
 \begin{itemize}
 	\item Diseño e implementación del firmware del sistema embebido.
-	\item Diseño e implementación del algoritmo de ML para reconocimiento de personas.
+	\item Diseño e implementación de los modelos de DL para detección facial.
 	\item Implementación del sistema embebido desarrollado dentro de una arquitectura IoT existente.
-	\item Diseño del PCB para el prototipo funcional del sistema embebido.
+	\item Diseño e implementación de un dashboard para visualizar la información transmitida por el sistema embebido.
 	\item Creación de documentación sobre datos técnicos y características del sistema embebido.
 \end{itemize}
 
 Este proyecto no incluye:
 \begin{itemize}
-	\item Implementación del PCB para el prototipo funcional del sistema embebido.
+	\item Desarrollo del PCB para el prototipo funcional del sistema embebido.
 	\item Desarrollo de una aplicación para el usuario final.
 \end{itemize}
 
@@ -214,7 +185,7 @@ Este proyecto no incluye:
 \begin{itemize}
 	\item Se contará con el presupuesto necesario para obtener los componentes del proyecto.
 	\item Se dedicarán al menos 2 horas diarias para la realización del proyecto.
-	\item Se dispondrá de una arquitectura IoT para redes LoRaWAN para la realización de pruebas y puesta en marcha del proyecto.
+	\item Se dispondrá de acesso a servicios en la nube para la realización de pruebas y puesta en marcha del proyecto.
 \end{itemize}
 
 \section{6. Requerimientos}
@@ -225,20 +196,17 @@ El presente proyecto tiene dos tipos de requerimientos, funcionales y no funcion
 \begin{enumerate}
 	\item Requerimientos funcionales
 		\begin{enumerate}
-			\item El sistema debe conectarse a una red LoRaWAN en la banda de frecuencia AU915 como dispositivo de clase A.
-			\item El sistema debe ser alimentado mediante dos baterías de tipo AA.
-			\item El sistema debe poseer mecanismos de seguridad implementados tanto en hardware como en software para evitar su manipulación incorrecta.
-			\item El sistema debe almacenar fotografías y videos obtenidos mediante su cámara cámara en una memoria no volátil.
-			\item El sistema debe recibir su configuración inicial mediante interruptores físicos conectados al mismo.
-			\item El sistema debe recibir sus parámetros de funcionamiento mediante la red LoRaWAN a la que está conectada.
+			\item El sistema debe conectarse a una red Wi-Fi existente a través de algún mecanismo de provisionamiento de credenciales de red.
+			\item El sistema debe establecer comunicación con los servidores de AWS.
+			\item El sistema debe ser alimentado mediante dos baterías AA de litio.
+			\item El sistema debe poseer mecanismos de seguridad implementados tanto en hardware como en firmware para evitar su manipulación incorrecta.
 			\item El sistema debe funcionar solamente si se detecta movimiento en el sector donde se encuentra instalada.
-			\item El sistema debe ser compatible con la especificación LoRaWAN 1.0.2.
-			\item El sistema debe, con ayuda de su cámara, detectar la presencia de personas a través de un algoritmo de ML.
+			\item El sistema debe, a través de uno o varios modelos de DL, detectar la cantidad de rostros humanos presentes en una fotografía obtenida por su cámara.
 		\end{enumerate}
 	\item Requerimientos no funcionales
 		\begin{enumerate}
-			\item El sistema deberá tener un costo de desarrollo igual o menor a 200U\$S.
-			\item El sistema deberá tener documentación adecuada sobre su uso y desarrollo.
+			\item El sistema debe tener un costo de desarrollo igual o menor a 200U\$S.
+			\item El sistema debe tener documentación adecuada sobre su uso y desarrollo.
 		\end{enumerate}
 \end{enumerate}
 
@@ -269,24 +237,36 @@ El criterio para determinar los \textit{storyboards} es el siguiente.
 \end{itemize}
 
 \begin{enumerate}
-	\item Como usuario quiero que la duración de las baterías sea al menos de 1 año para que no suponga un costo económico adicional muy alto.
-	\begin{itemize}
-		\item Complejidad: 3
-		\item Tiempo: 4
-		\item Recursos: 1
-	\end{itemize}
-	\item Como usuario quiero que la configuración del sistema se haga en pocos pasos para evitar complicaciones en su puesta en marcha.
+	\item Como usuario quiero que la duración de las baterías sea al menos de 1 año para que no suponga un costo económico adicional muy alto en el futuro.
 	\begin{itemize}
 		\item Complejidad: 4
 		\item Tiempo: 4
-		\item Recursos: 1
+		\item Recursos: 4
 	\end{itemize}
-	\item Como desarrollador del firmware quiero que el sistema esté basado en un RTOS(Real Time Operating System) para poder escalar la aplicación de manera más sencilla.
+		\item Como usuario quiero poder visualizar la información que genera el sistema en un dashboard que pueda ser accedido mediante internet.
 	\begin{itemize}
 		\item Complejidad: 3
-		\item Tiempo: 4
+		\item Tiempo: 5
+		\item Recursos: 2
+	\end{itemize}
+	\item Como usuario quiero que la configuración del sistema se realice en la menor cantidad posible de pasos para evitar complicaciones en su puesta en marcha.
+	\begin{itemize}
+		\item Complejidad: 2
+		\item Tiempo: 3
 		\item Recursos: 1
 	\end{itemize}
+	\item Como desarrollador del firmware quiero que el sistema esté basado en un RTOS (Real Time Operating System) para poder escalar la aplicación de manera más sencilla en el futuro.
+	\begin{itemize}
+		\item Complejidad: 3
+		\item Tiempo: 2
+		\item Recursos: 1
+	\end{itemize}
+	\item Como desarrollador del hardware quiero que el sistema se componga de la menor cantidad posible de componentes electrónicos para optmizar el proceso y tiempo de desarrollo.
+	\begin{itemize}
+		\item Complejidad: 4
+		\item Tiempo: 5
+		\item Recursos: 3
+	\end{itemize}	
 \end{enumerate}
 
 \section{8. Entregables principales del proyecto}
@@ -308,50 +288,49 @@ Los entregables del proyecto son:
 	\begin{enumerate}
 		\item Planificar el proyecto. (38 hs)
 		\item Investigar sobre sistemas similares. (24 hs)
-		\item Definir los componentes a utilizar. (6 hs)
-		\item Recopilar y estudiar documentos (datasheets y application notes) de los componentes a utilizar. (30 hs)
-		\item Investigar las normativas locales sobre redes que utilizan las bandas ISM(Industrial, Scientific and Medical). (12 hs)
+		\item Recopilar y estudiar documentos de los componentes a utilizar. (30 hs)
 		\item Planificar y diagramar la arquitectura a utilizar en el sistema (10 hs)
 		\item Crear un repositorio en la nube para almacenar el código a desarrollar (2 hs)
 	\end{enumerate}
 	
 \item Prototipo de pruebas (40 hs)
 	\begin{enumerate}
-		\item Obtener los componentes del sistema. (12 hs)
-		\item Probar la funcionalidad de todos los componentes del sistema por separado. (26 hs)
-		\item Montar el prototipo de pruebas y asegurar conexiones. (2 hs)
+		\item Importar los componentes del sistema. (12 hs)
+		\item Probar la funcionalidad de todos los componentes del sistema individualmente. (26 hs)
+		\item Construir el prototipo de pruebas y asegurar sus conexiones. (2 hs)
 	\end{enumerate}
 	
-\item LoRaWAN (66 hs)
+\item Firmware ( hs)
 	\begin{enumerate}
-		\item Desarrollar código para el stack LoRaWAN. (22 hs)
-		\item Desarrollar código para configurar el sistema como dispositivo LoRaWAN de clase A. (18 hs)
-		\item Desarrollar código para enviar y recibir paquetes de datos a través de una red LoRaWAN en la banda AU915. (16 hs)
-		\item Probar el código desarrollado en el prototipo de pruebas. (10 hs)
+		\item Elegir las herramientas para desarrollar el firmware. (hs)
+		\item Instalar y configurar las herramientras para desarrollar el firmware. (hs)
+		\item Desarrollar código para manejar la cámara del sistema. (hs)
+		\item Desarrollar código para manejar la conectividad Wi-Fi del sistema. (hs)
+		\item Desarrollar código para manejar el protocolo MQTT. (hs)
 	\end{enumerate}
 	
-\item ML (148 hs)
+\item IoT (148 hs)
 	\begin{enumerate}
-		\item Realizar un curso sobre TinyML. (40 hs)
-		\item Desarrollar el modelo de ML a utilizar. (30 hs)
+		\item Estudiar e implementar los servicios de AWS necesarios para el sistema. (hs)
+		\item Integrar los servicios de AWS implementados con el firmware desarrollado. (hs)
 		\item Desarrollar código para integrar el modelo de ML en el sistema. (32 hs)
 		\item Desarrollar una biblioteca de código para controlar la cámara del sistema. (24 hs)
 		\item Desarrollar código para integrar la cámara del sistema con el modelo de ML. (12 hs)
 		\item Probar el código desarrollado en el prototipo de pruebas. (10 hs)
 	\end{enumerate}
 
-\item IoT (82 hs)
+\item DL (82 hs)
 	\begin{enumerate}
-		\item Configurar el entorno IoT para integrar al sistema. (14 hs)
-		\item Definir el formato de los paquetes a recibir y transmitir. (2 hs)
-		\item Desarrollar código para integrar el código de LoRaWAN y ML. (48 hs).
-		\item Probar el código desarrollado en el prototipo de pruebas. (10 hs)
-		\item Implementar el prototipo de pruebas dentro del entorno IoT. (8 hs)
+		\item Realizar cursos sobre DL y visión artificial
+. (hs)
+		\item Investigar los modelos de DL aplicables al proyecto. (hs)
+		\item Desarrollar los modelos de DL. (hs)
+		\item Integrar los modelos de DL con el firmware desarrollado. (hs)
 	\end{enumerate}
-	
+
 \item V\&V (48 hs)
 	\begin{enumerate}
-		\item Medir y comprobar los parámetros eléctricos del sistema con instrumentos de laboratorio. (8 hs)
+		\item Medir los parámetros eléctricos del sistema con instrumentación de laboratorio. (8 hs)
 		\item Probar el sistema en un entorno de trabajo controlado. (36 hs)
 		\item Analizar las experiencias de uso reportadas por los usuarios. (4 hs)
 	\end{enumerate}
@@ -372,7 +351,7 @@ El diagrama de actividades se puede observar en la figura \ref{fig:AoN}.
 
 \begin{figure}[htpb]
 \centering
-\includegraphics[width=.6\textwidth]{./fig/AoN.png}
+\includegraphics[width=.8\textwidth]{./fig/AoN.png}
 \caption{Diagrama en \textit{Activity on Node}}
 \label{fig:AoN}
 \end{figure}
@@ -385,7 +364,7 @@ En la figura \ref{sec:gantt} se puede observar el diagrama de Gantt de este proy
 \begin{landscape}
 \begin{figure}[htpb]
 \centering
-\includegraphics[height=.95\textheight]{./fig/gantt.png}
+\includegraphics[height=.8\textheight]{./fig/gantt.png}
 \caption{Diagrama de Gantt}
 \label{fig:diagGantt}
 \end{figure}
@@ -410,43 +389,33 @@ Descripción &
  \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Cantidad} &
  \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor unitario} &
  \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor total} \\ \hline
-\multicolumn{1}{|l|}{Placa de desarrollo de ST (ARM Cortex M4)} &
-\multicolumn{1}{|c|}{1} &
-\multicolumn{1}{|c|}{47} &
-\multicolumn{1}{|c|}{47}
-  \\ \hline
-\multicolumn{1}{|l|}{Módulo con cámara de 5 megapixeles} &
-\multicolumn{1}{|c|}{1} &
-\multicolumn{1}{|c|}{45} &
-\multicolumn{1}{|c|}{45}
-  \\ \hline
-\multicolumn{1}{|l|}{Módulo transceptor LoRaWAN US915} &
-\multicolumn{1}{|c|}{1} &
-\multicolumn{1}{|c|}{25} &
-\multicolumn{1}{|c|}{25}
-  \\ \hline
-\multicolumn{1}{|l|}{Módulo para tarjeta SD} &
-\multicolumn{1}{|c|}{1} &
-\multicolumn{1}{|c|}{3} &
-\multicolumn{1}{|c|}{3}
-  \\ \hline
-\multicolumn{1}{|l|}{Módulo sensor PIR} &
-\multicolumn{1}{|c|}{1} &
+\multicolumn{1}{|l|}{Placa de desarrollo ESP32-S3-DevKitC-1U-N8R8} &
 \multicolumn{1}{|c|}{2} &
-\multicolumn{1}{|c|}{2}
+\multicolumn{1}{|c|}{15} &
+\multicolumn{1}{|c|}{30}
   \\ \hline
-\multicolumn{1}{|l|}{Módulo para tarjeta SD} &
-\multicolumn{1}{|c|}{1} &
-\multicolumn{1}{|c|}{3} &
-\multicolumn{1}{|c|}{3}
+\multicolumn{1}{|l|}{Módulo con cámara OV2640} &
+\multicolumn{1}{|c|}{2} &
+\multicolumn{1}{|c|}{11,99} &
+\multicolumn{1}{|c|}{23,98}
+  \\ \hline
+\multicolumn{1}{|l|}{Sensor PIR IRA-S410ST01} &
+\multicolumn{1}{|c|}{2} &
+\multicolumn{1}{|c|}{3,49} &
+\multicolumn{1}{|c|}{6,98}
+  \\ \hline
+\multicolumn{1}{|l|}{Amplificador operacional TLV8544} &
+\multicolumn{1}{|c|}{2} &
+\multicolumn{1}{|c|}{1,82} &
+\multicolumn{1}{|c|}{3,64}
   \\ \hline
 \multicolumn{1}{|l|}{Otros (cables, conectores, etc)} &
-\multicolumn{1}{|c|}{1} &
+\multicolumn{1}{|c|}{2} &
 \multicolumn{1}{|c|}{10} &
-\multicolumn{1}{|c|}{10}
+\multicolumn{1}{|c|}{20}
   \\ \hline
 \multicolumn{3}{|c|}{SUBTOTAL} &
- \multicolumn{1}{c|}{135} \\ \hline
+ \multicolumn{1}{c|}{84,6} \\ \hline
 \rowcolor[HTML]{C0C0C0}
 \multicolumn{4}{|c|}{\cellcolor[HTML]{C0C0C0}COSTOS INDIRECTOS} \\ \hline
 \rowcolor[HTML]{C0C0C0}
@@ -456,40 +425,41 @@ Descripción &
  \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor total} \\ \hline
 \multicolumn{1}{|l|}{50\% del costo directo} &
 \multicolumn{1}{|c|}{1} &
-\multicolumn{1}{|c|}{67,5} &
-\multicolumn{1}{|c|}{67,5}
+\multicolumn{1}{|c|}{42,3} &
+\multicolumn{1}{|c|}{42,3}
   \\ \hline
 \multicolumn{3}{|c|}{SUBTOTAL} &
- \multicolumn{1}{c|}{67,5} \\ \hline
+ \multicolumn{1}{c|}{42,3} \\ \hline
 \rowcolor[HTML]{C0C0C0}
 \multicolumn{3}{|c|}{TOTAL} &
-\multicolumn{1}{|c|}{202,5}
+\multicolumn{1}{|c|}{126,9}
   \\ \hline
 \end{tabularx}%
 \end{table}
 
-Los valores expuestos en la tabla anterior están expresados en dólares americanos (U\$S). Esto se debe a que la mayor parte de los componentes serán importados directamente de proveedores en Estados Unidos.
+Los valores expuestos en la tabla anterior están expresados en dólares americanos (U\$S). Esto es por que todos los componentes serán adquiridos de el distribuidor Mouser, ubicado en Estados Unidos.
 
 \section{13. Gestión de riesgos}
 \label{sec:riesgos}
 
 a) Identificación de los riesgos y estimación de sus consecuencias:
+
 Riesgo 1: Imposibilidad de obtener los componentes necesarios.
 \begin{itemize}
 	\item Severidad (S): 7. El sistema podría no funcionar de acuerdo a lo planificado.
 	\item Probabilidad de ocurrencia (O): 3. Si no se encuentran los componentes en el mercado local, estos pueden ser importados
 \end{itemize}  
 
-Riesgo 2: El tamaño del modelo de ML puede sobrepasar la cantidad de memoria del microcontrolador.
+Riesgo 2: El tamaño de los modelos de DL desarrollados puede sobrepasar la cantidad de memoria disponible.
 \begin{itemize}
-	\item Severidad (S): 9. Si el modelo de ML no puede ser almacenado en la memoria del microcontrolador, el sistema no podría realizar las funciones para las que fue planificado.
-	\item Ocurrencia (O): 7. El tamaño del modelo de ML alcanzará un tamaño no adecuado en función de su complejidad.
+	\item Severidad (S): 9. Si lso modelos de DL no pueden ser almacenados en la memoria disponible, el sistema no podría realizar las funciones para las que fue planificado.
+	\item Ocurrencia (O): 7. El tamaño de los modelos de DL alcanzarán un tamaño no adecuado en función de su complejidad y su optimización.
 \end{itemize}
 
 Riesgo 3: Imposibilidad de contar con instrumentación de laboratorio.
 \begin{itemize}
 	\item Severidad (S): 3. Las mediciones de alta precisión son para contar con datos técnicos exactos, que ayudarán a desarrollar una versión comercial del sistema posteriormente.
-	\item Ocurrencia (O): 2. En el lugar de residencia se cuenta con un laboratorio de electrónica que funciona regularmente y está abierto al público previa aceptación de los encargados.
+	\item Ocurrencia (O): 2. En el lugar de residencia del autor se cuenta con un laboratorio de electrónica que funciona regularmente y está abierto al público previa aceptación de los encargados.
 \end{itemize}
 
 Riesgo 4: Imposibilidad de contar con los recursos económicos necesarios.
@@ -513,7 +483,7 @@ b) Tabla de gestión de riesgos:      (El RPN se calcula como RPN=SxO)
 \rowcolor[HTML]{C0C0C0}
 Riesgo & S & O & RPN & S* & O* & RPN* \\ \hline
 Imposibilidad de obtener los componentes necesarios & 7 & 3 & 21 & - & - & -\\ \hline
-El tamaño del modelo de ML puede sobrepasar la cantidad de memoria del microcontrolador & 9 & 7 & 63 & 9 & 2 & 18\\ \hline
+El tamaño de los modelos de DL desarrollados puede sobrepasar la cantidad de memoria disponible & 9 & 7 & 63 & 9 & 2 & 18\\ \hline
 Imposibilidad de contar con instrumentación de laboratorio & 3 & 2 & 6 & - & - & -\\ \hline
 Imposibilidad de contar con los recursos económicos necesarios & 10 & 2 & 20 & - & - & -\\ \hline
 Falta de tiempo para concluir el proyecto & 5 & 6 & 30 & 5 & 4 & 20\\ \hline
@@ -543,27 +513,36 @@ Riesgo 5: Durante el tiempo planificado del proyecto se trabajarán los fines de
 \begin{enumerate}
 	\item Requerimientos funcionales
 		\begin{itemize}
-			\item Req \#1.1: el sistema debe conectarse a una red LoRaWAN en la banda de frecuencia AU915 como dispositivo de clase A.
+			\item Req \#1.1: el sistema debe conectarse a una red Wi-Fi existente a través de algún mecanismo de aprovisionamiento de credenciales de red.
 
 			\begin{itemize}
-				\item Verificación: conectar el sistema a un servidor LNS (LoRaWAN Network Server) mediante un gateway LoRaWAN en la banda AU915 para comprobar a través de la UART que los paquetes son enviados correctamente y que los datos solo son recibidos mientras las ventanas de tiempo de recepción de los dispositivos clase A están disponibles.
-				\item Validación: conectar el sistema a una arquitectura IoT existente a través de un gateway LoRaWAN comercial en la banda AU915 para enviar y recibir datos.
+				\item Verificación: conectar el sistema a una red Wi-Fi existente a través de el mecanismo de aprovisionamiento de credenciales de red y comprobar a través de la salida de monitor del sistema.
+				\item Validación: conectar el sistema a una red Wi-Fi existente mediante una aplicación destinada para esto y comprobar su conexión a internet en la plataforma de AWS.
 			\end{itemize}
 
 		\end{itemize}
 		
 		\begin{itemize}
-			\item Req \#1.2: el sistema debe ser alimentado mediante dos baterías de tipo AA.
+			\item Req \#1.2: El sistema debe establecer comunicación con los servidores de AWS.
+
+			\begin{itemize}
+				\item Verificación: mediante las herramientas de AWS para probar el protocolo MQTT, comprobar que los mensajes enviados desde el sistema son recepcionados correctamente.
+				\item Validación: con ayuda de un dashboard visualizar la información del sistema.
+			\end{itemize}
+		\end{itemize}
+		
+		\begin{itemize}
+			\item Req \#1.3: el sistema debe ser alimentado mediante dos baterías AA de litio.
 
 			\begin{itemize}
 				\item Verificación: con ayuda de un multímetro de precisión medir que los parámetros eléctricos requeridos por los componentes del sistema sean los requeridos por sus datasheets.
-				\item Validación: visualizar el buen funcionamiento del sistema a través de los LEDs de estado disponibles.
+				\item Validación: visualizar el buen funcionamiento del sistema a través del LED RGB del sistema.
 			\end{itemize}
 
 		\end{itemize}
 		
 		\begin{itemize}
-			\item Req \#1.3: el sistema debe poseer mecanismos de seguridad implementados tanto en hardware como en software para evitar su manipulación incorrecta.
+			\item Req \#1.4: el sistema debe poseer mecanismos de seguridad implementados tanto en hardware como en software para evitar su manipulación incorrecta.
 
 			\begin{itemize}
 				\item Verificación: mediante herramientas proporcionadas por el fabricante de la tarjeta de desarrollo, comprobar que los sectores de memoria dedicados a la seguridad funcionen correctamente.
@@ -573,61 +552,21 @@ Riesgo 5: Durante el tiempo planificado del proyecto se trabajarán los fines de
 		\end{itemize}
 		
 		\begin{itemize}
-			\item Req \#1.4: el sistema debe almacenar fotografías y videos obtenidos mediante su cámara cámara en una memoria no volátil.
+			\item Req \#1.5: el sistema debe funcionar solamente si se detecta movimiento en el sector donde se encuentra instalada.
 
 			\begin{itemize}
-				\item Verificación: verificar con ayuda de herramientas de depuración que los procesos de lectura y escritura entre el sistema y la tarjeta SD se realizan con éxito.
-				\item Validación: probar el sistema y posteriormente extraer la tarjeta SD para visualizar las imágenes obtenidas a través de un adaptador USB y una PC.
+				\item Verificación: con ayuda de la salida de monitor del sistema comprobar el estado del sistema y la detección de movimiento a través del sensor PIR.
+				\item Validación: comprobar que el LED RGB del sistema se active por el movimiento de algún cuerpo que se encuentre en el área de detección del sistema.
 			\end{itemize}
 
 		\end{itemize}
-		
+				
 		\begin{itemize}
-			\item Req \#1.5: el sistema debe recibir su configuración inicial mediante interruptores físicos conectados al mismo.
+			\item Req \#1.6: el sistema debe, a través de uno o varios modelos de DL, detectar la cantidad de rostros humanos presentes en una fotografía obtenida por su cámara.
 
 			\begin{itemize}
-				\item Verificación: mediante herramientas de depuración comprobar que los sectores de memoria donde se almacena la configuración de sistema conrrespondan con las posiciones de los interruptores físicos.
-				\item Validación: configurar el sistema en sus diferentes modos a través de los interruptores físicos.
-			\end{itemize}
-
-		\end{itemize}
-		
-		\begin{itemize}
-			\item Req \#1.6: el sistema debe recibir sus parámetros de funcionamiento mediante la red LoRaWAN a la que está conectada.
-
-			\begin{itemize}
-				\item Verificación: mediante herramientas de depuración comprobar que los sectores de memoria donde se almacena la configuración de sistema corresponda con los datos que se reciben por el servidor LNS.
-				\item Validación: configurar el sistema en sus diferentes modos a través de una plataforma web.
-			\end{itemize}
-
-		\end{itemize}
-		
-		\begin{itemize}
-			\item Req \#1.7: el sistema debe funcionar solamente si se detecta movimiento en el sector donde se encuentra instalada.
-
-			\begin{itemize}
-				\item Verificación: con ayuda del puerto UART imprimir el estado del sistema y la detección de movimiento a través del sensor PIR del sistema.
-				\item Validación: determinar si los LEDs de estado del sistema son activados por el movimiento de algún cuerpo que se encuentre en el área del sistema.
-			\end{itemize}
-
-		\end{itemize}
-		
-		\begin{itemize}
-			\item Req \#1.8: el sistema debe ser compatible con la especificación LoRaWAN 1.0.2.
-
-			\begin{itemize}
-				\item Verificación: utilizar herramientas para probar la compatibilidad de dispositivos LoRaWAN provistas por LoRa Alliance.
-				\item Validación: conectar el sistema a una red LoRaWAN existente que cumpla con la especificación LoRaWAN 1.0.2.
-			\end{itemize}
-
-		\end{itemize}
-		
-		\begin{itemize}
-			\item Req \#1.9: el sistema debe, con ayuda de su cámara, detectar la presencia de personas a través de un algoritmo de ML.
-
-			\begin{itemize}
-				\item Verificación: probar el algoritmo de ML mediante simuladores y con ayuda del puerto UART comprobar que se detecta correctamente la presencia de personas.
-				\item Validación: probar el sistema en un entorno real de trabajo y con ayuda de una plataforma web comprobar la detección de personas.
+				\item Verificación: probar los algoritmos de DL con un banco de pruebas compuesto por imágenes similares a las que serán adquiridas en un entorno real de trabajo, y comprobar su precisión con herramientas para la medición de métricas.
+				\item Validación: probar el sistema en un entorno real de trabajo y monitorear los datos en los servidores de AWS.
 			\end{itemize}
 
 		\end{itemize}
