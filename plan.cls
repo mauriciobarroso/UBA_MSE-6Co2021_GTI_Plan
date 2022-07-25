@@ -129,7 +129,7 @@
 \fancyhf{} % clear all header and footers
 \pagestyle{fancy}
 
-\lhead{\includegraphics[width=3.5cm]{./fig/logoFIUBAnew.jpg}}
+\lhead{\includegraphics[width=3.5cm]{./fig/logoFIUBA.pdf}}
 \chead{}
 \rhead{\normalsize \textrm{Plan de proyecto de Trabajo final \\\degreename\\ \authorname}}
 \lfoot{ }
@@ -184,7 +184,7 @@
 \thispagestyle{empty}
 \centering
 	
-	\centering \includegraphics[width=.7\textwidth]{./fig/logoFIUBAnew.jpg}
+	\centering \includegraphics[width=.7\textwidth]{./fig/logoFIUBA.pdf}
 	
 	\vspace{3cm}
 	{\Huge \textbf{\ttitle}} \\

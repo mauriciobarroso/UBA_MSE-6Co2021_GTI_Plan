@@ -12,7 +12,7 @@
 % Nombre del posgrado, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \degreename
 %\posgrado{Carrera de Especialización en Sistemas Embebidos}
 %\posgrado{Carrera de Especialización en Internet de las Cosas}
-%\posgrado{Carrera de Especialización en Intelegencia Artificial}
+%\posgrado{Carrera de Especialización en Inteligencia Artificial}
 \posgrado{Maestría en Sistemas Embebidos}
 %\posgrado{Maestría en Internet de las cosas}
 
@@ -37,8 +37,8 @@
 \pertenenciaJurDos{pertenencia (2)}
 \juradoTres{Nombre y Apellido (3)}
 \pertenenciaJurTres{pertenencia (3)}
-\fechaINICIO{23 de junio de 2021}		%Fecha de inicio de la cursada de GdP \fechaInicioName
-\fechaFINALPlan{11 de agosto de 2021} 	%Fecha de final de cursada de GdP
+\fechaINICIO{28 de junio de 2022}		%Fecha de inicio de la cursada de GdP \fechaInicioName
+\fechaFINALPlan{17 de agosto de 2022} 	%Fecha de final de cursada de GdP
 \fechaFINALTrabajo{15 de diciembre de 2022}	%Fecha de defensa pública del trabajo final
 
 
@@ -67,8 +67,7 @@
 \hline
 \rowcolor[HTML]{C0C0C0}
 Revisión & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Detalles de los cambios realizados} & Fecha      \\ \hline
-0      & Creación del documento                                 &\fechaInicioName \\ \hline
-\hline
+0      & Creación del documento				&28 de junio de 2022 \\ \hline
 \end{tabularx}
 \end{table}
 
@@ -98,7 +97,7 @@ Se adjunta a esta acta la planificación inicial.
 \begin{tabular}[c]{@{}c@{}}Ariel Lutenberg \\ Director posgrado FIUBA\end{tabular} & \hspace{2cm} & \begin{tabular}[c]{@{}c@{}}\supname \\ Director del Trabajo Final\end{tabular} \vspace{2.5cm} \\
 %\multicolumn{3}{c}{\begin{tabular}[c]{@{}c@{}} \supname \\ Director del Trabajo Final\end{tabular}} \vspace{2.5cm} \\
 %\begin{tabular}[c]{@{}c@{}}\jurunoname \\ Jurado del Trabajo Final\end{tabular}     &  & \begin{tabular}[c]{@{}c@{}}\jurdosname\\ Jurado del Trabajo Final\end{tabular}  \vspace{2.5cm}  \\
-%\multicolumn{3}{c}{\begin{tabular}[c]{@{}c@{}} \jurtresname\\ Jurado del Trabajo Final\end{tabular}} \vspace{.5cm}                                                                    
+%\multicolumn{3}{c}{\begin{tabular}[c]{@{}c@{}} \jurtresname\\ Jurado del Trabajo Final\end{tabular}} \vspace{.5cm}                                                                   
 \end{tabular}
 \end{table}
 
@@ -112,7 +111,7 @@ La difusión de las redes sociales y el auge del Internet de las Cosas (IoT, Int
 
 Hoy en día, los dispositivos móviles, como teléfonos inteligentes y tabletas, brindan a los usuarios varias aplicaciones relacionadas con la tarea de detección de rostros, como grabación de video inteligente, navegación, aplicaciones para mejorar la seguridad, anotación automática de contenido visual, computación afectiva, incluido el reconocimiento y seguimiento de rostros.
 
-Sin embargo, la disponibilidad limitada de unidades de procesamiento gŕafico (GPU, Graphics Processing Unit) en dichos dispositivos impone una limitación en el rendimiento de los algoritmos que se pueden usar de manera eficiente para la tarea de detección de rostros. Las GPUs integradas en estos dispostivos móviles son más lentas que las utlizadas en computadores de escritorio, con solo una fracción de memoria y esta restricción hace que la mayoría de los algoritmos de aprendizaje profundo (DL, Deep Learning) recomendados sean inadecuados para tales aplicaciones de detección y reconocimiento de rostros.
+Sin embargo, la disponibilidad limitada de unidades de procesamiento gŕafico (GPU, Graphics Processing Unit) en dichos dispositivos impone una limitación en el rendimiento de los algoritmos que se pueden usar de manera eficiente para la tarea de detección de rostros. Las GPUs integradas en estos dispositivos móviles son más lentas que las utilizadas en computadores de escritorio, con solo una fracción de memoria y esta restricción hace que la mayoría de los algoritmos de aprendizaje profundo (DL, Deep Learning) recomendados sean inadecuados para tales aplicaciones de detección y reconocimiento de rostros.
 
 Entonces, el objetivo de este trabajo es diseñar e implementar una solución de bajo costo económico y bajo consumo eléctrico, que pueda detectar y contar rostros humanos a través de una cámara y con ayuda de algoritmos de DL, como paso previo para la tarea de reconocimiento de rostros.
 
@@ -129,7 +128,7 @@ Según todas las características antes descritas, el sistema embebido implicado
 
 \vspace{25px}
 
-El sistema propuesto tiene como componente más importante una tarjeta de desarrollo ESP32-S3-DevKitC-1, cuyo elemento principal es un SoC (System on a Chip) ESP32-S3, que se encagará de ejecutar los modelos de DL, adquirir y procesar las imágenes obtenidas por la cámara, adquirir señales del sensor PIR (Passive InfraRed) y establecer comunicación con los servidores de AWS (Amazon Web Services) para enviar y recibir información. El sensor PIR ayuda a establer si cerca del sistema existe algún tipo de movimiento para ejecutar las tareas previstas con el menor uso de energía posible. La cámara tiene la función de obtener imágenes y digitalizarlas para ofrecerlas al SoC.
+El sistema propuesto tiene como componente más importante una tarjeta de desarrollo ESP32-S3-DevKitC-1, cuyo elemento principal es un SoC (System on a Chip) ESP32-S3, que se encargará de ejecutar los modelos de DL, adquirir y procesar las imágenes obtenidas por la cámara, adquirir señales del sensor PIR (Passive InfraRed) y establecer comunicación con los servidores de AWS (Amazon Web Services) para enviar y recibir información. El sensor PIR ayuda a establecer si cerca del sistema existe algún tipo de movimiento para ejecutar las tareas previstas con el menor uso de energía posible. La cámara tiene la función de obtener imágenes y digitalizarlas para ofrecerlas al SoC.
 
 \section{2. Identificación y análisis de los interesados}
 \label{sec:interesados}
@@ -159,7 +158,7 @@ Usuario final & -                 & -             			& -       	\\ \hline
 
 El propósito de este proyecto es diseñar e implementar un sistema embebido que mediante una cámara pueda detectar rostros humanos de las imágenes que obtiene con ayuda de uno o varios modelos de DL, para transmitir los resultados de sus predicciones a un servidor IoT.
 
-Un propósito personal del autor es obtener conocimientos y experiencia sobre diseño e implementación de modelo de DL optmizados para sistemas embebidos.
+Un propósito personal del autor es obtener conocimientos y experiencia sobre diseño e implementación de modelo de DL optimizados para sistemas embebidos.
 
 \section{4. Alcance del proyecto}
 \label{sec:alcance}
@@ -184,8 +183,8 @@ Este proyecto no incluye:
 
 \begin{itemize}
 	\item Se contará con el presupuesto necesario para obtener los componentes del proyecto.
-	\item Se dedicarán al menos 2 horas diarias para la realización del proyecto.
-	\item Se dispondrá de acesso a servicios en la nube para la realización de pruebas y puesta en marcha del proyecto.
+	\item Se contará con al menos una red Wi-Fi local para la realización de pruebas y puesta en marcha del proyecto.
+	\item Se dispondrá de acceso a servicios en la nube para la realización de pruebas y puesta en marcha del proyecto.
 \end{itemize}
 
 \section{6. Requerimientos}
@@ -196,7 +195,7 @@ El presente proyecto tiene dos tipos de requerimientos, funcionales y no funcion
 \begin{enumerate}
 	\item Requerimientos funcionales
 		\begin{enumerate}
-			\item El sistema debe conectarse a una red Wi-Fi existente a través de algún mecanismo de provisionamiento de credenciales de red.
+			\item El sistema debe conectarse a una red Wi-Fi existente a través de algún mecanismo de aprovisionamiento de credenciales de red.
 			\item El sistema debe establecer comunicación con los servidores de AWS.
 			\item El sistema debe ser alimentado mediante dos baterías AA de litio.
 			\item El sistema debe poseer mecanismos de seguridad implementados tanto en hardware como en firmware para evitar su manipulación incorrecta.
@@ -205,7 +204,7 @@ El presente proyecto tiene dos tipos de requerimientos, funcionales y no funcion
 		\end{enumerate}
 	\item Requerimientos no funcionales
 		\begin{enumerate}
-			\item El sistema debe tener un costo de desarrollo igual o menor a 200U\$S.
+			\item El sistema debe tener un costo de desarrollo igual o menor a US\$200.
 			\item El sistema debe tener documentación adecuada sobre su uso y desarrollo.
 		\end{enumerate}
 \end{enumerate}
@@ -261,7 +260,7 @@ El criterio para determinar los \textit{storyboards} es el siguiente.
 		\item Tiempo: 2
 		\item Recursos: 1
 	\end{itemize}
-	\item Como desarrollador del hardware quiero que el sistema se componga de la menor cantidad posible de componentes electrónicos para optmizar el proceso y tiempo de desarrollo.
+	\item Como desarrollador del hardware quiero que el sistema esté compuesto de la menor cantidad posible de componentes electrónicos para optimizar el proceso y tiempo de desarrollo.
 	\begin{itemize}
 		\item Complejidad: 4
 		\item Tiempo: 5
@@ -284,65 +283,61 @@ Los entregables del proyecto son:
 \label{sec:wbs}
 
 \begin{enumerate}
-\item Análisis y planificación preliminar (122 hs)
+\item Análisis y planificación preliminar (148 hs)
 	\begin{enumerate}
-		\item Planificar el proyecto. (38 hs)
-		\item Investigar sobre sistemas similares. (24 hs)
-		\item Recopilar y estudiar documentos de los componentes a utilizar. (30 hs)
-		\item Planificar y diagramar la arquitectura a utilizar en el sistema (10 hs)
-		\item Crear un repositorio en la nube para almacenar el código a desarrollar (2 hs)
+		\item Escribir la planificación del proyecto. (108 hs)
+		\item Investigar sobre sistemas similares. (16 hs)
+		\item Recopilar y estudiar documentos de los componentes a utilizar. (16 hs)
+		\item Planificar y diagramar la arquitectura a utilizar en el sistema (4 hs)
+		\item Crear un repositorio en la nube para almacenar el código a desarrollar (4 hs)
 	\end{enumerate}
 	
-\item Prototipo de pruebas (40 hs)
+\item Prototipo de pruebas (128 hs)
 	\begin{enumerate}
-		\item Importar los componentes del sistema. (12 hs)
-		\item Probar la funcionalidad de todos los componentes del sistema individualmente. (26 hs)
-		\item Construir el prototipo de pruebas y asegurar sus conexiones. (2 hs)
+		\item Importar los componentes del sistema. (120 hs)
+		\item Probar la funcionalidad de todos los componentes del sistema individualmente. (4 hs)
+		\item Construir el prototipo de pruebas y asegurar sus conexiones. (4 hs)
 	\end{enumerate}
 	
-\item Firmware ( hs)
+\item Firmware (80 hs)
 	\begin{enumerate}
-		\item Elegir las herramientas para desarrollar el firmware. (hs)
-		\item Instalar y configurar las herramientras para desarrollar el firmware. (hs)
-		\item Desarrollar código para manejar la cámara del sistema. (hs)
-		\item Desarrollar código para manejar la conectividad Wi-Fi del sistema. (hs)
-		\item Desarrollar código para manejar el protocolo MQTT. (hs)
+		\item Elegir las herramientas para desarrollar el firmware. (4 hs)
+		\item Instalar y configurar las herramientas para desarrollar el firmware. (4 hs)
+		\item Desarrollar código para manejar la cámara del sistema. (24 hs)
+		\item Desarrollar código para manejar la conectividad Wi-Fi del sistema. (24 hs)
+		\item Desarrollar código para manejar el protocolo MQTT. (24 hs)
 	\end{enumerate}
 	
-\item IoT (148 hs)
+\item IoT (68 hs)
 	\begin{enumerate}
-		\item Estudiar e implementar los servicios de AWS necesarios para el sistema. (hs)
-		\item Integrar los servicios de AWS implementados con el firmware desarrollado. (hs)
-		\item Desarrollar código para integrar el modelo de ML en el sistema. (32 hs)
-		\item Desarrollar una biblioteca de código para controlar la cámara del sistema. (24 hs)
-		\item Desarrollar código para integrar la cámara del sistema con el modelo de ML. (12 hs)
-		\item Probar el código desarrollado en el prototipo de pruebas. (10 hs)
+		\item Estudiar e implementar los servicios de AWS necesarios para el sistema. (40 hs)
+		\item Integrar los servicios de AWS implementados con el firmware desarrollado. (28 hs)
 	\end{enumerate}
 
-\item DL (82 hs)
+\item DL (296 hs)
 	\begin{enumerate}
 		\item Realizar cursos sobre DL y visión artificial
-. (hs)
-		\item Investigar los modelos de DL aplicables al proyecto. (hs)
-		\item Desarrollar los modelos de DL. (hs)
-		\item Integrar los modelos de DL con el firmware desarrollado. (hs)
+. (120 hs)
+		\item Investigar los modelos de DL aplicables al proyecto. (40 hs)
+		\item Desarrollar los modelos de DL. (116 hs)
+		\item Integrar los modelos de DL con el firmware desarrollado. (20 hs)
 	\end{enumerate}
 
-\item V\&V (48 hs)
+\item V\&V (20 hs)
 	\begin{enumerate}
-		\item Medir los parámetros eléctricos del sistema con instrumentación de laboratorio. (8 hs)
-		\item Probar el sistema en un entorno de trabajo controlado. (36 hs)
+		\item Medir los parámetros eléctricos del sistema con instrumentación de laboratorio. (4 hs)
+		\item Probar el sistema en un entorno de trabajo controlado. (12 hs)
 		\item Analizar las experiencias de uso reportadas por los usuarios. (4 hs)
 	\end{enumerate}
 	
-\item Cierre (106 hs)
+\item Cierre (196 hs)
 	\begin{enumerate}
-		\item Elaborar la memoria técnica del trabajo final. (80 hs)
-		\item Elaborar la presentación del trabajo final. (26 hs)
+		\item Elaborar la memoria técnica del trabajo final. (168 hs)
+		\item Elaborar la presentación del trabajo final. (28 hs)
 	\end{enumerate}
 \end{enumerate}
 
-Cantidad total de horas: (612 hs)
+Cantidad total de horas: (936 hs)
 
 \section{10. Diagrama de Activity On Node}
 \label{sec:AoN}
@@ -364,7 +359,7 @@ En la figura \ref{sec:gantt} se puede observar el diagrama de Gantt de este proy
 \begin{landscape}
 \begin{figure}[htpb]
 \centering
-\includegraphics[height=.8\textheight]{./fig/gantt.png}
+\includegraphics[height=.9\textheight]{./fig/gantt.png}
 \caption{Diagrama de Gantt}
 \label{fig:diagGantt}
 \end{figure}
@@ -376,7 +371,7 @@ En la figura \ref{sec:gantt} se puede observar el diagrama de Gantt de este proy
 \section{12. Presupuesto detallado del proyecto}
 \label{sec:presupuesto}
 
-El presupuesto que se presenta en esta sección es un aproximado, ya que valores de los componentes que son parte del sistema embebido aún no fueron definidos. Por tanto, se consideran los costos más altos del mercado de componentes que cumplan las funciones requeridas. De esta manera se tiene un presupuesto suficiente para cumplir con el proyecto.
+El presupuesto que se presenta en esta sección es un aproximado, ya que algunos de los componentes que son parte del sistema aún no fueron definidos. Por tanto, se consideran los costos más altos del mercado de componentes que cumplan las funciones requeridas. De esta manera se tiene un presupuesto suficiente para cumplir con el proyecto.
 
 \begin{table}[htpb]
 \centering
@@ -386,58 +381,58 @@ El presupuesto que se presenta en esta sección es un aproximado, ya que valores
 \multicolumn{4}{|c|}{\cellcolor[HTML]{C0C0C0}COSTOS DIRECTOS} \\ \hline
 \rowcolor[HTML]{C0C0C0}
 Descripción &
- \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Cantidad} &
- \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor unitario} &
- \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor total} \\ \hline
+\multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Cantidad} &
+\multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor unitario} &
+\multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor total} \\ \hline
 \multicolumn{1}{|l|}{Placa de desarrollo ESP32-S3-DevKitC-1U-N8R8} &
 \multicolumn{1}{|c|}{2} &
 \multicolumn{1}{|c|}{15} &
 \multicolumn{1}{|c|}{30}
-  \\ \hline
+ \\ \hline
 \multicolumn{1}{|l|}{Módulo con cámara OV2640} &
 \multicolumn{1}{|c|}{2} &
 \multicolumn{1}{|c|}{11,99} &
 \multicolumn{1}{|c|}{23,98}
-  \\ \hline
+ \\ \hline
 \multicolumn{1}{|l|}{Sensor PIR IRA-S410ST01} &
 \multicolumn{1}{|c|}{2} &
 \multicolumn{1}{|c|}{3,49} &
 \multicolumn{1}{|c|}{6,98}
-  \\ \hline
+ \\ \hline
 \multicolumn{1}{|l|}{Amplificador operacional TLV8544} &
 \multicolumn{1}{|c|}{2} &
 \multicolumn{1}{|c|}{1,82} &
 \multicolumn{1}{|c|}{3,64}
-  \\ \hline
+ \\ \hline
 \multicolumn{1}{|l|}{Otros (cables, conectores, etc)} &
 \multicolumn{1}{|c|}{2} &
 \multicolumn{1}{|c|}{10} &
 \multicolumn{1}{|c|}{20}
-  \\ \hline
+ \\ \hline
 \multicolumn{3}{|c|}{SUBTOTAL} &
- \multicolumn{1}{c|}{84,6} \\ \hline
+\multicolumn{1}{c|}{84,6} \\ \hline
 \rowcolor[HTML]{C0C0C0}
 \multicolumn{4}{|c|}{\cellcolor[HTML]{C0C0C0}COSTOS INDIRECTOS} \\ \hline
 \rowcolor[HTML]{C0C0C0}
 Descripción &
- \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Cantidad} &
- \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor unitario} &
- \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor total} \\ \hline
+\multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Cantidad} &
+\multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor unitario} &
+\multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor total} \\ \hline
 \multicolumn{1}{|l|}{50\% del costo directo} &
 \multicolumn{1}{|c|}{1} &
 \multicolumn{1}{|c|}{42,3} &
 \multicolumn{1}{|c|}{42,3}
-  \\ \hline
+ \\ \hline
 \multicolumn{3}{|c|}{SUBTOTAL} &
- \multicolumn{1}{c|}{42,3} \\ \hline
+\multicolumn{1}{c|}{42,3} \\ \hline
 \rowcolor[HTML]{C0C0C0}
 \multicolumn{3}{|c|}{TOTAL} &
 \multicolumn{1}{|c|}{126,9}
-  \\ \hline
+ \\ \hline
 \end{tabularx}%
 \end{table}
 
-Los valores expuestos en la tabla anterior están expresados en dólares americanos (U\$S). Esto es por que todos los componentes serán adquiridos de el distribuidor Mouser, ubicado en Estados Unidos.
+Los valores expuestos en la tabla anterior están expresados en dólares americanos (U\$S). Esto es porque todos los componentes serán adquiridos del distribuidor Mouser, ubicado en Estados Unidos.
 
 \section{13. Gestión de riesgos}
 \label{sec:riesgos}
@@ -448,11 +443,11 @@ Riesgo 1: Imposibilidad de obtener los componentes necesarios.
 \begin{itemize}
 	\item Severidad (S): 7. El sistema podría no funcionar de acuerdo a lo planificado.
 	\item Probabilidad de ocurrencia (O): 3. Si no se encuentran los componentes en el mercado local, estos pueden ser importados
-\end{itemize}  
+\end{itemize} 
 
 Riesgo 2: El tamaño de los modelos de DL desarrollados puede sobrepasar la cantidad de memoria disponible.
 \begin{itemize}
-	\item Severidad (S): 9. Si lso modelos de DL no pueden ser almacenados en la memoria disponible, el sistema no podría realizar las funciones para las que fue planificado.
+	\item Severidad (S): 9. Si los modelos de DL no pueden ser almacenados en la memoria disponible, el sistema no podría realizar las funciones para las que fue planificado.
 	\item Ocurrencia (O): 7. El tamaño de los modelos de DL alcanzarán un tamaño no adecuado en función de su complejidad y su optimización.
 \end{itemize}
 
@@ -494,12 +489,12 @@ Criterio adoptado:
 Se tomarán medidas de mitigación en los riesgos cuyos números de RPN sean mayores a 25.
 
 c) Plan de mitigación de los riesgos que originalmente excedían el RPN máximo establecido:
-Riesgo 2: Se realizará un curso de ML en microcontroladores durante el periodo de vacaciones.
+Riesgo 2: Se realizarán varios cursos sobre ML y DL para el desarrollo de modelos para visión artificial a lo largo del proyecto.
 \begin{itemize}
-	\item Severidad (S): 9. Este riesgo sigue siendo muy severo por más conocimientos de ML que se posean.
-	\item Ocurrencia (O): 2. Con los conocimientos adecuados sobre ML en microcontroladores se pueden optimizar estos algoritmos, de tal forma que pueden adaptarse a la cantidad de memoria del microcontrolador a utilizar. \\ \\
+	\item Severidad (S): 9. Este riesgo sigue siendo muy severo independientemente de los conocimientos que se puedan adquirir.
+	\item Ocurrencia (O): 2. Con los conocimientos adecuados sobre ML, DL y visión artificial, es posible desarrollar o adaptar modelos que se adecuen a los requrimientos de memoria del hardware a utilizar. \\ \\
 \end{itemize}
-Riesgo 5: Durante el tiempo planificado del proyecto se trabajarán los fines de semana y feriados 4 horas diarias.
+Riesgo 5: Los feriados y fines de semanas serán se considerarán días laborales mientras el proyecto esté en deasarrollo.
 \begin{itemize}
 	\item Severidad (S): 5. La severidad no se ve afectada por la medida de mitigación.
 	\item Ocurrencia (O): 4. Las horas extras que se destinarán al proyecto podrían asegurar su conclusión en el tiempo planificado. Su ocurrencia baja muy poco porque no se descarta la posibilidad de que surjan imprevistos que retrasen el proyecto.
@@ -595,7 +590,7 @@ Riesgo 5: Durante el tiempo planificado del proyecto se trabajarán los fines de
 
 \end{enumerate}
 
-\section{15. Procesos de cierre}   
+\section{15. Procesos de cierre}  
 \label{sec:cierre}
 
 Establecer las pautas de trabajo para realizar una reunión final de evaluación del proyecto, tal que contemple las siguientes actividades:
@@ -619,5 +614,3 @@ Establecer las pautas de trabajo para realizar una reunión final de evaluación
 \end{itemize}
 
 \end{document}
-
-
